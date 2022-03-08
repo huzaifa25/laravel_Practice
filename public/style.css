@@ -1,0 +1,493 @@
+.container{
+    background-color:#094244;
+    color: whitesmoke;
+    padding: 16px 16px 31px 16px;
+}
+.regcontainer{
+  width: 48%;
+  height: auto;
+  background-color:cadetblue;
+  border-radius: 21px;
+  /* align-content: center; */
+  margin: auto;
+  margin-top: 5rem;
+  color: whitesmoke;
+  padding: 16px;
+}
+
+.bsign{
+    background-image: url("../public/img/bg.png");
+    background-repeat: none;
+   background-size: cover;
+  background-color:cadetblue;
+  color: whitesmoke;
+  padding: 16px;
+}
+.regcontainer{
+width: 48%;
+height: auto;
+background-color:cadetblue;
+border-radius: 21px;
+/* align-content: center; */
+margin: auto;
+margin-top: 5rem;
+color: whitesmoke;
+padding: 16px;
+}
+
+.bsign{
+  background-image: url("../img/bg.png");
+  background-repeat: none;
+ background-size: cover;
+}
+.body{
+  background-color: #290b38;
+}
+.h2{
+  font-family: system-ui;
+  font-size: 2.5rem;
+  text-align: center;
+  margin-top: 7rem;
+  color:lightslategray;
+}
+.h3{
+  font-family: system-ui;
+  font-size: 2.5rem;
+  text-align: center;
+  margin-top: 1rem;
+  color:lightslategray;
+}
+.rig{
+font-family: system-ui;
+font-size: 2.5rem;
+text-align: center;
+margin-top: 1rem;
+
+}
+.rig{
+  font-family: system-ui;
+  font-size: 2.5rem;
+  text-align: center;
+  margin-top: 1rem;
+  
+}
+.box{
+  /* background: lightslategray; */
+  width: 17rem;
+  color: azure;
+  /* border-radius: 0.7rem; */
+  /* padding: 1rem 0rem 0rem 4rem; */
+  text-align: center;
+  font-family: system-ui;
+  font-weight: 500;
+  font-size: 2.3rem;
+  display: inline-block;
+  margin: 3rem 0rem 0rem 11rem;
+  position: relative;
+  top: 0;
+  transition: top ease 0.4s;
+  box-shadow: 2px 4px 10px 5px rebeccapurple;
+
+}
+.box:hover{
+  background-color:indigo;
+  top: -10px;
+}
+/* Full-width input fields */
+input[type=text], input[type=password], input[type=email]{
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+
+.rad{ 
+padding: 0rem 0rem 0rem 8rem;
+} 
+
+
+/* Set a style for all buttons */
+button {
+  background-color:lightslategray;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+}
+
+button:hover {
+  opacity: 0.8;
+}
+
+
+/* Center the image and position the close button */
+.imgcontainer {
+  text-align: center;
+  margin: 24px 0 12px 0;
+  position: relative;
+}
+
+img.avatar {
+  width: 40%;
+  border-radius: 50%;
+}
+ 
+span.fpsw {
+  float: right;
+  background-color: whitesmoke;
+}
+
+/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  padding-top: 60px;
+
+}
+
+/* Modal Content/Box */
+.modal-content {
+  background-color: #fefefe;
+  margin: 5% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
+  /* border: 1px solid #888; */
+  width: 34%;
+  border-radius: 33px; 
+}
+
+/* The Close Button (x) */
+.close {
+  position: absolute;
+  right: 25px;
+  top: 0;
+  color: #000;
+  font-size: 35px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: red;
+  cursor: pointer;
+}
+
+/* Add Zoom Animation */
+.animate {
+  -webkit-animation: animatezoom 0.6s;
+  animation: animatezoom 0.6s
+}
+
+
+  
+@keyframes animatezoom {
+  from {transform: scale(0)} 
+  to {transform: scale(1)}
+}
+
+/* Change styles for span and cancel button on extra small screens */
+@media screen and (max-width: 300px) {
+  span.psw {
+     display: block;
+     float: none;
+  }
+  
+}
+  /* Admin Page CSS */
+.admin-body{
+  background: beige;
+  margin: 0;
+}
+.adbox{
+  background:#201919e8;
+  width: 72rem;
+  height: auto;
+  font-family: system system-ui;
+  box-shadow:  3px 5px 4px 2px #888888;
+  border: 1px solid #888888;
+  margin: 7rem 0rem 0rem 11rem;
+  color: whitesmoke;
+  font-size: 2rem;
+  padding: 15px;
+}
+.afield{
+  font-size: 1rem;
+}
+.search-btn{
+  width: 9rem;
+  height: auto;
+  background-color: #5366df;
+  color: whitesmoke;
+  font-family: system system-ui;
+  font-weight: 600;
+  font-size: 0.9rem;
+  /* float: right;*/
+  margin:0.6rem 0rem 0rem 1rem; 
+}
+/* Teacher Page CSS */
+.teabox{
+  background:#201919e8;
+  width: 80rem;
+  height: auto;
+  font-family: system system-ui;
+  box-shadow:  3px 4px 18px 2px #888888;
+  border: 1px solid #888888;
+  margin: 15rem 0rem 0rem 11rem;
+  color: whitesmoke;
+  margin: 2rem 0rem 0rem 7rem;  
+}
+.t-table {
+  font-family: system system-ui;
+  border-collapse: collapse;
+  width: 100%;
+  color: whitesmoke;
+  height: 100%;
+}
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+.atd-rad{ 
+  padding: 0rem 1rem 0rem 0rem;
+  } 
+.tea-body{
+  background:#3e1313;
+  color: whitesmoke;
+  font-family: system system-ui;
+  text-align: center;
+  margin: 0;
+}
+.atd-btn{
+  width: 9rem;
+  height: auto;
+  background-color: #5399df;
+  color: whitesmoke;
+  font-family: system system-ui;
+  font-weight: 600;
+  font-size: 0.9rem;
+  float: right;
+  margin:0.6rem 7.5rem 0rem 0rem;
+}
+.tlogout{
+  width: 9rem;
+  height: auto;
+  background-color: #354c62;
+  color: whitesmoke;
+  font-family: system system-ui;
+  font-weight: 600;
+  font-size: 0.9rem;
+  margin: 0.5rem 0rem 0rem -32rem;
+  position: absolute;
+}
+.adm-btn{
+  width: 9rem;
+  height: auto;
+  background-color: #23bf9b;
+  color: whitesmoke;
+  font-family: system system-ui;
+  font-weight: 600;
+  font-size: 0.9rem;
+  position: absolute;
+}
+/* ent-marks Page CSS */
+.inmarks{
+  margin: auto;
+}
+.tmbox{
+  background:#201919e8;
+  width: 80rem;
+  height: auto;
+  font-family: system system-ui;
+  box-shadow:  3px 4px 18px 2px #888888;
+  border: 1px solid #888888;
+  margin: 15rem 0rem 0rem 11rem;
+  color: whitesmoke;
+  margin: 3rem 0rem 0rem 7rem;  
+}
+.tm-table {
+  font-family: system system-ui;
+  border-collapse: collapse;
+  width: 100%;
+  color: whitesmoke;
+  height: 100%;
+}
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+.team-body{
+  background:#3e1313;
+  color: whitesmoke;
+  font-family: system system-ui;
+  text-align: center;
+}
+.atdm-btn{
+  width: 9rem;
+  height: auto;
+  background-color: #5399df;
+  color: whitesmoke;
+  font-family: system system-ui;
+  font-weight: 600;
+  font-size: 0.9rem;
+  float: right;
+  margin:0.6rem 7.5rem 0rem 0rem;
+}
+#select-course{
+  display:none;
+}
+/* password reset page */
+.container-fluid{
+  padding: 8rem 33rem 0rem 33rem;
+  color: whitesmoke;
+  /* background: darkcyan;
+  height: 37rem; */
+
+}
+.resetpsw{
+  background: darkcyan;
+}
+.form-group{
+background-color:lightslategray;
+color: white;
+padding: 14px 20px;
+margin: 8px 0;
+border: none;
+cursor: pointer;
+width: 100%;
+}
+/* Student page */
+.stubox{
+  background:#201919e8;
+  width: 80rem;
+  height: auto;
+  font-family: system system-ui;
+  box-shadow:  3px 4px 18px 2px #888888;
+  border: 1px solid #888888;
+  margin: 15rem 0rem 0rem 11rem;
+  color: whitesmoke;
+  margin: 3rem 0rem 0rem 7rem;  
+}
+.crsbox{
+  background:#201919e8;
+  width: 33rem;
+  height: auto;
+  font-family: system system-ui;
+  box-shadow:  3px 4px 18px 2px #888888;
+  border: 1px solid #888888;
+  margin: 15rem 0rem 0rem 11rem;
+  color: whitesmoke;
+  margin: 2rem 0rem 0rem 31rem;
+}
+.s-table{
+  font-family: system system-ui;
+  border-collapse: collapse;
+  width: 100%;
+  color: whitesmoke;
+  height: 100%;
+}
+/* Navbaar Logout */
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #261515;
+}
+
+li {
+  margin: 0rem 0 0 80rem;
+}
+
+li a, .dropbtn {
+  display: inline-block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+li a:hover, .dropdown:hover .dropbtn {
+  background-color: red;
+}
+
+li.dropdown {
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+.dropdown-content a:hover {background-color: #f1f1f1;}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+/* dromdown signup page css */
+.select-style {
+  padding: 10px;
+    margin: 0;
+    border: 1px solid #ccc;
+    width: 199px;
+    border-radius: 4px;
+    overflow: hidden;
+    background-color: #fff;
+    background: #fff;
+    position: relative;
+    font-family: system-ui;
+    font-size: 0.87rem;
+}
+.select-style select {
+  padding: 5px 8px;
+  width: 130%;
+  border: none;
+  box-shadow: none;
+  background-color: transparent;
+  background-image: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+.select-style:after {
+  top: 50%;
+  left: 85%;
+  border: solid transparent;
+  content: " ";
+  height: 0;
+  width: 0;
+  position: absolute;
+  pointer-events: none;
+  border-color: rgba(0, 0, 0, 0);
+  border-top-color: #000000;
+  border-width: 5px;
+  margin-top: -2px;
+  z-index: 100;
+}
+.select-style select:focus {
+  outline: none;
+}
