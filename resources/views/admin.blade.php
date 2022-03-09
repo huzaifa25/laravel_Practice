@@ -17,7 +17,11 @@
              <li class="dropdown" >
                   <a href="javascript:void(0)" class="dropbtn">Logout</a>
                   <div class="dropdown-content">
-                    <a href="logout">Logout</a>
+                  <form action="{{ route('logout') }}" method="post">
+                          @csrf
+                          <button type="submit">Log out</button>
+                      </form>
+                    <!-- <a href="logout">Logout</a> -->
                   </div>
             </li>
         </ul>

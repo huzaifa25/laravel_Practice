@@ -3,7 +3,9 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\Login;
-
+use App\Http\Controllers\TeacherController;
+use App\Http\Controllers\LogoutController;
+use App\Http\Controllers\StudentController;
 //use App\Http\Controllers;
 /*
 |--------------------------------------------------------------------------
@@ -35,6 +37,18 @@ Route::post("login",[Login::class,'userLogin'])->name('login'); //path for contr
 Route::get('admin',function(){
     return view('admin');
 })->middleware(['disable_back','auth']);
+///end admin///
+//show teacher//
+Route::get('teacher',[TeacherController::class,'Teachershow']);
+Route::get('teacher',[TeacherController::class,'test']);
+//end teacher//
+//Show Student//
+Route::get('student',[StudentController::class,'StdShow']);
+Route::get('student',[StudentController::class,'studentData']);
+//End Student//
+// Route::get('teacher',function(){
+//     return view('teacher');
+// });
 /////check///
 //
 // Route::group(['middleware'=>'disable_back'],function(){
@@ -50,7 +64,7 @@ Route::get('admin',function(){
 // })->name('admin');
 // ////check end////
 //logout functionality
-Route::post("logout",[Login::class,'logout']);
+Route::post("logout",[LogoutController::class,'logout'])->name('logout');
 
 //login functionality////
 // Route::get('login', function () {
