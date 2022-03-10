@@ -14,16 +14,16 @@
 </head>
 <body class="body">
     <h2 class="h2">Welcome to School Mangement System</h2>
-    <h3 class="h3">Select your Respective Field</h3>
+<!-- 
     <div class="box" onclick="document.getElementById('admin').style.display='block'">
-        <p>Admin</p>
+        <p>Login</p>
+    </div> -->
+    <centre><div class="box" onclick="document.getElementById('teacher').style.display='block'">
+        <p>Login</p></centre>
     </div>
-    <div class="box" onclick="document.getElementById('teacher').style.display='block'">
-        <p>Teacher</p>
-    </div>
-    <div class="box"onclick="document.getElementById('student').style.display='block'">
+    <!-- <div class="box"onclick="document.getElementById('student').style.display='block'">
         <p>Student</p>
-    </div>
+    </div> -->
     <!--Modal-Admin-->
     <div id='admin' class="modal">
   
@@ -39,9 +39,10 @@
             <br><br>
             <label for="psw"><b>Password</b></label>
             <input type="password" placeholder="Password require, at least 5 character" name="admin_psw">
-              
-            <button type="submit" name="submit">Login</button>
-            <a href="signup.php"><button type="button">Sign up</button></a>
+            <br><br>
+           
+            <button type="submit" name="form1">Login</button>
+            <a href="signup.php"><button type="button" >Sign up</button></a>
             <span class="fpsw"> <a href="forget-password.php">Forgot Password</a><span>
           </div>
         </form>
@@ -50,20 +51,27 @@
         <!--Modal-Teacher-->
     <div id='teacher' class="modal">
   
-        <form id="loginform2" class="modal-content animate" action="#" method="post">
-          <div class="imgcontainer">
+        <form id="loginform2" class="modal-content animate" action="{{route('login')}}" method="post">
+        @csrf  
+        <div class="imgcontainer">
             <span onclick="document.getElementById('teacher').style.display='none'" class="close" title="Close Modal">&times;</span>
             <img src="img/t.png" alt="Avatar" class="avatar">
           </div>
           <div class="container">
-            <label for="uname"><b>Username</b></label>
-            <input type="text" placeholder="Enter Username" name="teacher_name" >
+            <label for="uname"><b>Email</b></label>
+            <input type="text" placeholder="Enter Email" name="admin_email" >
             <br><br>
             <label for="psw"><b>Password</b></label>
-            <input type="password" placeholder="Enter Password" name="tpsw" >
-              
-            <button type="submit" name="submit">Login</button>
-            <a href="signup.php"><button type="button">Sign up</button></a>
+            <input type="password" placeholder="Enter Password" name="admin_psw" >
+            <br><br>
+            <select id="designation" name="designation" class="select-style">
+                  <option selected>Choose your designation</option>
+                  <option value="admin">Admin</option>
+                  <option value="teacher">Teacher</option>
+                  <option value="student"  >Student</option>
+                </select>  
+            <button type="submit" name="form2" name="submit">Login</button>
+            <a href="signup.php"><button type="button" >Sign up</button></a>
            <span class="fpsw"> <a href="forget-password.php">Forgot Password</a><span>
           </div>
         </form>

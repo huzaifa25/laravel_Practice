@@ -12,5 +12,8 @@ class designation extends Model
 {
     use HasFactory;
     protected $table = 'users';
-   
+    public function getStd(){
+        return $this->hasMany('App\Models\std_brg_course');
+        //return $this->hasMany(std_brg_course::class);
+    }
 }

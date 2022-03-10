@@ -30,7 +30,8 @@ Route::get('signup', [UserController::class,'index']);
 //admin 
 
 Route::get('login', [Login::class,'show']);
-Route::post("login",[Login::class,'userLogin'])->name('login'); //path for controller with post request
+Route::post("login",[Login::class,'userLogin'])->name('login'); 
+
 //
 // Route::post("login",[Login::class,'userLogin']);
 //show admin 
@@ -41,10 +42,11 @@ Route::get('admin',function(){
 //show teacher//
 Route::get('teacher',[TeacherController::class,'Teachershow']);
 Route::get('teacher',[TeacherController::class,'test']);
+// Route::post("login",[TeacherController::class,'teaLogin'])->name('teacher');//path for controller with post request
 //end teacher//
 //Show Student//
 Route::get('student',[StudentController::class,'StdShow']);
-Route::get('student',[StudentController::class,'studentData']);
+//Route::get('student',[StudentController::class,'studentData']);
 //End Student//
 // Route::get('teacher',function(){
 //     return view('teacher');

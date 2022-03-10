@@ -13,9 +13,20 @@ class TeacherController extends Controller
 {
     function Teachershow()
     {   
-        return view('/teacher');
+        return view('teacher');
     }
 
+//     function teaLogin(Request $request)
+//     {
+//        $credentials = [
+//            'email' => $request->teacher_email,
+//            'password' => $request->tpsw
+//        ];
+//        if (Auth::attempt($credentials)) {
+//            // Authentication passed...
+//            return redirect()->intended('/teacher');
+//        }
+//    }
 
     function test()
     { 

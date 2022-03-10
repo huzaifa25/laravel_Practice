@@ -26,12 +26,25 @@ class Login extends Controller
      {
         $credentials = [
             'email' => $req->admin_email,
-            'password' => $req->admin_psw
+            'password' => $req->admin_psw,
+            'designation' => $req -> designation
         ];
+
         if (Auth::attempt($credentials)) {
             // Authentication passed...
-            return redirect()->intended('admin');
-        }
+            if(request('designation') == 'admin'){
+                return redirect()->intended('admin');
+            } 
+            elseif(request('designation') == 'teacher'){
+                return redirect()->intended('teacher');
+            } 
+            elseif(request('designation') == 'student'){
+                return redirect()->intended('student');
+            }
+        }   
+    }
+
+   
 
     //     $user  =  designation::where("email", $req->admin_email)
     //     ->where('password',$req->admin_psw)
@@ -44,7 +57,7 @@ class Login extends Controller
     //     $req->session()->put('email', $info); 
     //     return redirect('admin');
     //    }
-    }   
+   // }   
 
 //     public function logout(Request $request)
 // {

@@ -17,7 +17,8 @@ class StudentController extends Controller
         return view('student');
     }
     function studentData()
-    {
-        return designation::find(19)->getStd;
+    {   
+     
+        
     }
 }
