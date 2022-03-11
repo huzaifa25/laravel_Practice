@@ -31,9 +31,13 @@
                     <th>Email</th>
                     <th>Student Name</th>
                 </tr>
+                @foreach($data ?? '' as $user)
                 <tr>
-                    <!-- yaha likhna hay fetch course -->
+                  <td>{{$user ->id}}</td>
+                  <td>{{$user ->email}}</td>
+                  <td>{{$user ->user_name}}</td>
                 </tr>
+                @endforeach
             </table>
           
         </div>
@@ -45,9 +49,13 @@
                     <th>Course ID</th>
                     <th>Course Name</th>
                 </tr>
+              
+                @foreach($crs ?? '' as $values)
                 <tr>
-                    <!-- yaha likhna hay fetch course  -->
+                  <td>{{$values ->course_id}}</td>
+                  <td>{{$values ->course_name}}</td>
                 </tr>
+                @endforeach
             </table>
           
         </div>

@@ -25,7 +25,7 @@
         <p>Student</p>
     </div> -->
     <!--Modal-Admin-->
-    <div id='admin' class="modal">
+    <!-- <div id='admin' class="modal">
   
         <form id="loginform" class="modal-content animate" action="{{route('login')}}" method="post">
           @csrf
@@ -46,7 +46,7 @@
             <span class="fpsw"> <a href="forget-password.php">Forgot Password</a><span>
           </div>
         </form>
-      </div>
+      </div> -->
       <!--Modal-End-->
         <!--Modal-Teacher-->
     <div id='teacher' class="modal">
@@ -78,7 +78,7 @@
       </div>
       <!--Modal-End-->
         <!--Modal-Student-->
-    <div id='student' class="modal">
+    <!-- <div id='student' class="modal">
   
         <form id="loginform3" class="modal-content animate" action="" method="post">
           <div class="imgcontainer">
@@ -98,7 +98,7 @@
             <span class="fpsw"> <a href="forget-password.php">Forgot Password</a><span>
           </div>
         </form>
-      </div>
+      </div> -->
       <!--Modal-End-->
 <script>
  // Get the modal 

@@ -41,9 +41,10 @@
             </div>
         </form>
       <!-- form for display all admin ,teacher and student -->
-        <form action="displayadmin.php" method="post" id="all">
+        <form action="{{route('AdminController')}}" method="post" id="all">
+            @csrf
             <p><b>Select Field to display All :</b></p>
-            <span class="afield"> <label  class="rad"> <input type="radio" name="field" value="admin"><b>Admin</b></label>
+            <span class="afield"> <label  class="rad"> <input type="radio" name="field" value="adminitrator"><b>Admin</b></label>
                 <label  class="rad"><input type="radio" name="field" value="Teacher" ><b>Teacher</b></label>
                 <label  class="rad"><input type="radio" name="field" value="Student" id="course"><b>Student</b></label>
              </span>

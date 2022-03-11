@@ -6,6 +6,8 @@ use App\Http\Controllers\Login;
 use App\Http\Controllers\TeacherController;
 use App\Http\Controllers\LogoutController;
 use App\Http\Controllers\StudentController;
+use App\Http\Controllers\AdminController;
+
 //use App\Http\Controllers;
 /*
 |--------------------------------------------------------------------------
@@ -45,9 +47,12 @@ Route::get('teacher',[TeacherController::class,'test']);
 // Route::post("login",[TeacherController::class,'teaLogin'])->name('teacher');//path for controller with post request
 //end teacher//
 //Show Student//
-Route::get('student',[StudentController::class,'StdShow']);
-//Route::get('student',[StudentController::class,'studentData']);
+Route::get('student',[StudentController::class,'courseShow']);
 //End Student//
+//Show displayadmin  from admin all//
+Route::get('displayadmin',[AdminController::class,'ShowDisplayAdimn']);
+Route::post('displayadmin',[AdminController::class,'viewAll'])->name('AdminController'); ;
+//Show displayadmin  from admin all//
 // Route::get('teacher',function(){
 //     return view('teacher');
 // });
