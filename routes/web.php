@@ -50,14 +50,16 @@ Route::get('teacher',[TeacherController::class,'test']);
 Route::get('student',[StudentController::class,'courseShow']);
 //End Student//
 //Show displayadmin  from admin all//
-Route::get('displayadmin',[AdminController::class,'ShowDisplayAdimn']);
-Route::post('displayadmin',[AdminController::class,'viewAll'])->name('AdminController'); ;
-//Show displayadmin  from admin all//
+//Route::get('displayadmin',[AdminController::class,'ShowDisplayAdimn']);
+Route::post('displayadmin',[AdminController::class,'viewAll'])->name('AdminController');
+Route::get('deletedata/{id}',[AdminController::class,'destroy']) ->name('deletedata');
+//
+//End displayadmin  from admin all//
 // Route::get('teacher',function(){
 //     return view('teacher');
 // });
 /////check///
-//
+//id/{id}
 // Route::group(['middleware'=>'disable_back'],function(){
 //     Route::group(['middleware'=>'auth'],function(){
 //         Route::get('admin',function(){

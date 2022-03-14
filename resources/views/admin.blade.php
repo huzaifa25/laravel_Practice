@@ -28,7 +28,7 @@
         <!-- <a  href="logout.php"><button class ="tlogout">Log out</button></a> -->
     </div>
     <div class="adbox"> 
-        <form action="displayadmin.php" method="post" id="ad"> 
+        <!-- <form action="displayadmin.php" method="post" id="ad"> 
             <label> Enter User Name</label>
             <input type="text" name="name" id="name">
             <p><b>Select Field:</b></p>
@@ -39,7 +39,7 @@
              <div>
                 <button class="search-btn" type="submit" name="submit" >Search</button>
             </div>
-        </form>
+        </form> -->
       <!-- form for display all admin ,teacher and student -->
         <form action="{{route('AdminController')}}" method="post" id="all">
             @csrf

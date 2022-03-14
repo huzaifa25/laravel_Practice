@@ -491,3 +491,14 @@ li.dropdown {
 .select-style select:focus {
   outline: none;
 }
+/* action button class display admin page */
+.action{
+  background-color: CADETBLUE;
+  color: whitesmoke;
+  padding: 14px 20px;
+  margin: 8px 0;
+  cursor: pointer;
+  width: 49%;
+  border: none;
+  
+}

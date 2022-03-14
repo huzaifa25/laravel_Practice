@@ -4,6 +4,7 @@ use App\Models\Coursefetch;
 use App\Models\designation;
 use App\Models\std_brg_course;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\DB;
 
 class UserController extends Controller
@@ -33,7 +34,7 @@ class UserController extends Controller
       $new_user = new designation();
       $new_user->user_name = request('uname');
       $new_user->email = request('mail');
-      $new_user->password = request('psw');
+      $new_user->password = hash::make(request('psw'));
       $new_user->designation = request('designation');
       $new_user->save();
       if(request('designation') == 'student'){

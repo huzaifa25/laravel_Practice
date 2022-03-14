@@ -15,7 +15,11 @@
              <li class="dropdown" >
                   <a href="javascript:void(0)" class="dropbtn">Logout</a>
                   <div class="dropdown-content">
-                    <a href="logout.php">Logout</a>
+                  <form action="{{ route('logout') }}" method="post">
+                          @csrf
+                          <button type="submit">Log out</button>
+                      </form>
+                    <!-- <a href="logout.php">Logout</a> -->
                   </div>
             </li>
         </ul>
@@ -27,8 +31,22 @@
                     <th>ID</th>
                     <th>Email</th>
                     <th>Name</th>
+                    <th>Designation</th>
+                    <th>Action</th>
                 </tr>
-                
+                @foreach($ad ?? '' as $value)
+                <tr>
+                <td>{{ $value->id }}</td>
+                <td>{{ $value->email }}</td>
+                <td>{{ $value->user_name }}</td>
+             <form action="{{ url('deletedata' , $value->id ) }}" method="POST"> 
+                 @csrf
+                <td>{{ $value->designation }}</td>
+                <td>
+                    <!-- <button class="action" value="{{ $value->id }}">Update </button> -->
+                <a class="action" href="{{route('deletedata',$value->id)}}"><button class="action" value="{{ $value->id }}">   Delete</button></a></td>                </form>
+                </tr>
+                @endforeach
                 
             </table>           
     </div>
