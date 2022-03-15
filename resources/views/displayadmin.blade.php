@@ -36,15 +36,20 @@
                 </tr>
                 @foreach($ad ?? '' as $value)
                 <tr>
-                <td>{{ $value->id }}</td>
-                <td>{{ $value->email }}</td>
-                <td>{{ $value->user_name }}</td>
-             <form action="{{ url('deletedata' , $value->id ) }}" method="POST"> 
-                 @csrf
-                <td>{{ $value->designation }}</td>
-                <td>
-                    <!-- <button class="action" value="{{ $value->id }}">Update </button> -->
-                <a class="action" href="{{route('deletedata',$value->id)}}"><button class="action" value="{{ $value->id }}">   Delete</button></a></td>                </form>
+                    <td>{{ $value->id }}</td>
+                    <td>{{ $value->email }}</td>
+                    <td>{{ $value->user_name }}</td>
+                    <td>{{ $value->designation }}</td>
+                    <td>
+                        <form action="{{ url('deletedata' , $value->id ) }}" method="POST"> 
+                            @csrf
+                            <a class="action" href="{{route('deletedata',$value->id)}}"><button class="action" value="{{ $value->id }}">   Delete</button></a>
+                        </form>
+                        <form action="{{ url('updatedata' , $value->id ) }}" method="POST">                    
+                            @csrf
+                            <a class="action" href="{{route('updatedata',$value->id)}}"><button class="action" value="{{ $value->id }}">   Update</button></a>
+                        </form>
+                     </td> 
                 </tr>
                 @endforeach
                 

@@ -20,6 +20,7 @@ class CreateUsersTable extends Migration
             $table->string('password', 60);
             $table->enum('designation',['admin','teacher','student']);            
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

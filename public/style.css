@@ -502,3 +502,14 @@ li.dropdown {
   border: none;
   
 }
+.upbox{
+  background: #201919e8;
+  width: 35rem;
+  height: auto;
+  font-family: system system-ui;
+  box-shadow: 3px 4px 18px 2px #888888;
+  border: 1px solid #888888;
+  margin: 22rem 0rem 0rem 11rem;
+  color: whitesmoke;
+  margin: 3rem 0rem 0rem 30rem;
+}

@@ -52,7 +52,11 @@ Route::get('student',[StudentController::class,'courseShow']);
 //Show displayadmin  from admin all//
 //Route::get('displayadmin',[AdminController::class,'ShowDisplayAdimn']);
 Route::post('displayadmin',[AdminController::class,'viewAll'])->name('AdminController');
-Route::get('deletedata/{id}',[AdminController::class,'destroy']) ->name('deletedata');
+Route::post('deletedata/{id}',[AdminController::class,'destroy']) ->name('deletedata'); //for delete record
+Route::post('updatedata/{id}',[AdminController::class,'showData']) ->name('updatedata');//for showing the record if want to update
+Route::post('edit/{id}',[AdminController::class,'upDate'])->name('edit');;//for update record
+
+
 //
 //End displayadmin  from admin all//
 // Route::get('teacher',function(){

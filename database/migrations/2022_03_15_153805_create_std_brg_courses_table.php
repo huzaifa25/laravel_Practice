@@ -15,7 +15,7 @@ class CreateStdBrgCoursesTable extends Migration
     {
         Schema::create('std_brg_courses', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('std_id')->constrained('users')->onDelete('cascade');//cascade nahi kara q k delete daykhlena
+            $table->foreignId('std_id')->constrained('users')->onDelete('cascade');
             $table->foreignId('course_id')->constrained('courses')->onDelete('cascade');
             $table->timestamps();
         });

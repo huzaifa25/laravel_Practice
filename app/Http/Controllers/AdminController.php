@@ -32,11 +32,25 @@ class AdminController extends Controller
         //     return view("displayadmin")->with("something went wrong");
         // }
     }
-     public function destroy($id){
+
+    public function destroy($id){
          
         $deleted = DB::table('users')->where('id', '=', $id)->delete();
+        return redirect('admin');
+    }
 
-    //      designation::destroy($id);
-     return redirect('displayadmin');
+    public function showData($id){
+        $data = designation::find($id);
+        return view('updatedata',['data' => $data]);
+
+    }
+
+    public function upDate(Request $request)
+    {
+        $upgrade = designation::find($request->id);
+        $upgrade->user_name=$request->user_name;
+        $upgrade->email=$request->email;
+        $upgrade->save();
+        return redirect('admin');
     }
 }
