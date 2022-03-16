@@ -26,7 +26,8 @@ use App\Http\Controllers\AdminController;
 //Route::get ('user',[UserController::class,'test']);
 Route::get ('signup',[UserController::class,'display']);
 Route::post ('signup',[UserController::class,'desg']);
-Route::get('signup', [UserController::class,'index']);
+//Route::get('signup', [UserController::class,'index']);
+Route::get('signup', [UserController::class,'showPost']);
 //working for login
 //Route::view('admin','admin');
 //admin 

@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 use App\Models\designation;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
-
+use Illuminate\Database\Eloquent\SoftDeletes;
 
 class AdminController extends Controller
 {
@@ -35,7 +35,7 @@ class AdminController extends Controller
 
     public function destroy($id){
          
-        $deleted = DB::table('users')->where('id', '=', $id)->delete();
+        $deleted = designation::find($id)->delete();
         return redirect('admin');
     }
 

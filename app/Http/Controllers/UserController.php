@@ -3,10 +3,10 @@ namespace App\Http\Controllers;
 use App\Models\Coursefetch;
 use App\Models\designation;
 use App\Models\std_brg_course;
+use App\Models\post;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\DB;
-
 class UserController extends Controller
 {
   // function test()
@@ -19,6 +19,12 @@ class UserController extends Controller
         return view("signup")->with(['data' => $data]);
   }
 
+  public function showPost()
+  {
+    $desig = post::all();
+    return view("signup")->with(['desig' => $desig]);
+  }
+
   public function display()
   {
     return view("signup");
@@ -29,7 +35,7 @@ class UserController extends Controller
           'uname'=>'required',
           'mail'=>'required',
           'psw'=>'required|same:confirmpsw',
-          'designation'=>'required|in:admin,teacher,student'
+          //'designation'=>'required|in:admin,teacher,student'
       ]);
       $new_user = new designation();
       $new_user->user_name = request('uname');
@@ -37,14 +43,14 @@ class UserController extends Controller
       $new_user->password = hash::make(request('psw'));
       $new_user->designation = request('designation');
       $new_user->save();
-      if(request('designation') == 'student'){
-        foreach(request('course_ids') as $course_id) {
-          $new_std = new std_brg_course();
-          $new_std->std_id = $new_user->id;
-          $new_std->course_id = $course_id;
-          $new_std->save();
-        }
-      }
+      // if(request('designation') == 'student'){
+      //   foreach(request('course_ids') as $course_id) {
+      //     $new_std = new std_brg_course();
+      //     $new_std->std_id = $new_user->id;
+      //     $new_std->course_id = $course_id;
+      //     $new_std->save();
+      //   }
+      // }
 
       return redirect('signup')->with('Entry has been made');
       // return back()->with('success','Item created successfully!');

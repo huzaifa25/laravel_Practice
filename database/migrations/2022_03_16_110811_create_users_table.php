@@ -18,7 +18,7 @@ class CreateUsersTable extends Migration
             $table->string('email', 60)->unique();
             $table->string('user_name', 60);
             $table->string('password', 60);
-            $table->enum('designation',['admin','teacher','student']);            
+            $table->foreignId('designation_id')->constrained('designations')->onDelete('cascade');         
             $table->timestamps();
             $table->softDeletes();
         });

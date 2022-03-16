@@ -13,7 +13,7 @@ class std_brg_course extends Model
 {
     use HasFactory;
     protected $table = 'std_brg_courses';
-    public $timestamps=false;
+    //public $timestamps=false;
     
     // public function users(){
     //     return $this->hasMany(designation::class);

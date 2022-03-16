@@ -27,24 +27,16 @@
             <label for="confirmpsw"><b>Confirm Password</b></label>
             <input type="password" placeholder="Confirm Password" name="confirmpsw">
             <br><br>
-         <!-- text editor -->
-              
-              <select id="designation" name="designation" class="select-style">
+         <!-- text editor -->@foreach($desig ?? '' as $post)
+         <select id="designation" name="designation" class="select-style">
                   <option selected>Choose your designation</option>
-                  <option value="admin">Admin</option>
+                  <option value="{{ $post->id }}">Admin</option>
                   <option value="teacher">Teacher</option>
                   <option value="student"  >Student</option>
-                </select>
+                </select>@endforeach
+            <!-- ////// -->
                 <br><br>
-                <div id="student" class="group">
-                 @foreach($data ?? '' as $user)
-                 <input type="checkbox" name="course_ids[]" value="{{ $user->course_id }}" > 
-                    {{ $user->course_id }} {{ $user->course_name }}  
-                    <br>
-                    
-                  @endforeach
-                  <label for="atleast">Please Select atleast one course</label>
-              </div>
+             
             <!-- <span id="emp">This field i  s required</span> -->
             <!-- <select id="designation">
             <option value="admin">Admin</option>
