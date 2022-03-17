@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\designation;
+use App\Models\post;
 use Illuminate\Support\Facades\DB;
 //
 
@@ -13,9 +14,10 @@ class Login extends Controller
 
     public function show()
     {
-        return view('/login');
+        $desig = post::all();
+        return view('/login')->with(['desig' => $desig]);
     }
-    
+   
     // function userLogin(Request $req){
     //    $data= $req->input('admin_email');
     //    $req->session()->put('user',$data);
@@ -27,18 +29,18 @@ class Login extends Controller
         $credentials = [
             'email' => $req->admin_email,
             'password' => $req->admin_psw,
-            'designation' => $req -> designation
+            'designation_id' => $req -> designation
         ];
 
         if (Auth::attempt($credentials)) {
             // Authentication passed...
-            if(request('designation') == 'admin'){
+            if(request('designation') == '1'){
                 return redirect()->intended('admin');
             } 
-            elseif(request('designation') == 'teacher'){
+            elseif(request('designation') == '2'){
                 return redirect()->intended('teacher');
             } 
-            elseif(request('designation') == 'student'){
+            elseif(request('designation') == '3'){
                 return redirect()->intended('student');
             }
         }   

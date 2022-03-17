@@ -65,10 +65,10 @@
             <input type="password" placeholder="Enter Password" name="admin_psw" >
             <br><br>
             <select id="designation" name="designation" class="select-style">
-                  <option selected>Choose your designation</option>
-                  <option value="admin">Admin</option>
-                  <option value="teacher">Teacher</option>
-                  <option value="student"  >Student</option>
+            <option selected>Choose your designation</option>
+            @foreach($desig as $post)
+                  <option name="ids[]"  value="{{ $post->id }}">{{ $post->designation }}</option>
+                  @endforeach
                 </select>  
             <button type="submit" name="form2" name="submit">Login</button>
             <a href="signup.php"><button type="button" >Sign up</button></a>

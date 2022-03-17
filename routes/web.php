@@ -24,10 +24,12 @@ use App\Http\Controllers\AdminController;
 //     return view('signup');
 // });
 //Route::get ('user',[UserController::class,'test']);
+////SIGNUP//
 Route::get ('signup',[UserController::class,'display']);
-Route::post ('signup',[UserController::class,'desg']);
-//Route::get('signup', [UserController::class,'index']);
+Route::post ('signup',[UserController::class,'desg'])->name('user.form');
 Route::get('signup', [UserController::class,'showPost']);
+
+
 //working for login
 //Route::view('admin','admin');
 //admin 

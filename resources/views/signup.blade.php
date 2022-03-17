@@ -13,7 +13,7 @@
 <body class="bsign">
     <div class="regcontainer">
         <p class="rig">Register Your Self</p>
-        <form class="" id="signupform" action="signup" method="post">
+        <form class="" id="signupform" action="{{route('user.form')}}" method="post">
            @csrf
             <label for="mail"><b>Email</b></label>
             <input type="email" placeholder="Enter Email" name="mail" id="mail" class="@error('email') is-invalid @else is-valid @enderror">
@@ -27,35 +27,27 @@
             <label for="confirmpsw"><b>Confirm Password</b></label>
             <input type="password" placeholder="Confirm Password" name="confirmpsw">
             <br><br>
-         <!-- text editor -->@foreach($desig ?? '' as $post)
+         <!-- text editor -->
+ 
+         
          <select id="designation" name="designation" class="select-style">
                   <option selected>Choose your designation</option>
-                  <option value="{{ $post->id }}">Admin</option>
-                  <option value="teacher">Teacher</option>
-                  <option value="student"  >Student</option>
-                </select>@endforeach
-            <!-- ////// -->
-                <br><br>
-             
-            <!-- <span id="emp">This field i  s required</span> -->
-            <!-- <select id="designation">
-            <option value="admin">Admin</option>
-            <option value="teacher">Teacher</option>
-            <option value="student">multiple</option>
-            <option value="programming">Programming</option>
-            </select> -->
-            <!-- <br><br>
-
-              <div id="student" class="group" >
-              @foreach($data ?? '' as $user)
-                              <input type="checkbox" name="topic[]" value="{{ $user->course_id }}" > 
-                                  {{ $user->course_id }} {{ $user->course_name }}  
-                                  <br>
-                                  
-                                @endforeach
-                                <label for="atleast" name="topic">Please Select atleast one course</label>
-              </div> -->
-            <!-- bbbb -->
+                  @foreach($desig as $post)
+                  <option name="ids[]"  value="{{ $post->id }}">{{ $post->designation }}</option>
+                  @endforeach
+                </select>
+       
+        <br><br>
+             <div id="student" class="group">
+                 @foreach($data  as $user)
+                 <input type="checkbox" name="course_ids[]" value="{{ $user->course_id }}" > 
+                    {{ $user->course_id }} {{ $user->course_name }}  
+                    <br>
+                    
+                  @endforeach
+                  <label for="atleast">Please Select atleast one course</label>
+              </div> 
+        
             <button type="submit" name="submit">Sign Up</button>
         </form>
     </div>
@@ -115,8 +107,11 @@ $(document).ready(function () {
     $('.group').hide();
     //$('#student').show();
     $('#designation').change(function () {
-        $('.group').hide();
-        $('#'+$(this).val()).show();
+        if($('#designation').val() == '3') {
+          $('#student') .show();
+        } else {
+          $('#student').hide();
+        }
     })
 });
 </script>

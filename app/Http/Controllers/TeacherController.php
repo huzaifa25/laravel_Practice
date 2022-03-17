@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Coursefetch;
 use App\Models\designation;
+use App\Models\post;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 //
@@ -30,7 +31,7 @@ class TeacherController extends Controller
 
     function test()
     { 
-        $std = designation::select('id', 'user_name')->where('designation', '=', 'student')->get();
+        $std = designation::select('id', 'user_name')->where('designation_id', '=', '3')->get();
         return view("teacher")->with(['std' => $std]);
     }
 }
