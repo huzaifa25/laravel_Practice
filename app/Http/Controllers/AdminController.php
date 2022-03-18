@@ -16,24 +16,45 @@ class AdminController extends Controller
 
     public function viewAll(Request $req)
     {   
+    //     if(request('field')== 'adminitrator'){
+    //    $ad = DB::table('users')
+    //    ->leftjoin('designations','users.designation_id','=','designations.id')
+    //    ->select('users.id','email' , 'user_name', 'designations.designation')
+    //    ->where('designation_id','=','1')
+    //    ->get();
+    //    return view("displayadmin")->with(['ad' => $ad]);
+    //     }
         if(request('field')== 'adminitrator'){
-        return designation::select('id', 'email' ,'user_name','designations.designation')->where('designation_id','=','1')->getall ;
+            $ad = DB::table('users')
+            ->leftjoin('designations','users.designation_id','=','designations.id')
+            ->select('users.id','email' , 'user_name', 'designations.designation')
+            ->where('designation_id','=','1')
+            ->where('users.deleted_at','=',null)
+            ->get();
+            return view("displayadmin")->with(['ad' => $ad]);
         }
-        // if(request('field')== 'adminitrator'){
-        //     $ad = designation::select('id', 'email' , 'user_name' , 'designation_id')->where('designation_id', '=', '1')->get();
-        //     return view("displayadmin")->with(['ad' => $ad]);
-        // }
-        // elseif (request('field')== 'Teacher') {
-        //     $ad = designation::select('id', 'email' , 'user_name' , 'designation_id')->where('designation_id', '=', '2')->get();
-        //     return view("displayadmin")->with(['ad' => $ad]);
-        // }
-        // elseif (request('field') == 'Student') {
-        //     $ad = designation::select('id', 'email' , 'user_name' , 'designation_id')->where('designation_id', '=', '3')->get();
-        //     return view("displayadmin")->with(['ad' => $ad]);
-        // }
-        // else{
-        //     return view("displayadmin")->with("something went wrong");
-        // }
+        elseif (request('field')== 'Teacher') {
+            $ad = DB::table('users')
+            ->leftjoin('designations','users.designation_id','=','designations.id')
+            ->select('users.id','users.email' , 'users.user_name', 'designations.designation')
+            ->where('users.designation_id','=','2')
+            ->where('users.deleted_at','=',null)
+            ->get();
+            return view("displayadmin")->with(['ad' => $ad]);
+        }
+        elseif (request('field') == 'Student') {
+            $ad = DB::table('users')
+            ->leftjoin('designations','users.designation_id','=','designations.id')
+            ->select('users.id','email' , 'user_name', 'designations.designation')
+            ->where('designation_id','=','3')
+            ->where('users.deleted_at','=',null)
+            ->get();
+            
+            return view("displayadmin")->with(['ad' => $ad]);
+        }
+        else{
+            return view("displayadmin")->with("something went wrong");
+        }
     }
 
     public function destroy($id){

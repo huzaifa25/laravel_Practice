@@ -36,7 +36,10 @@ Route::get('signup', [UserController::class,'showPost']);
 
 Route::get('login', [Login::class,'show']);
 Route::post("login",[Login::class,'userLogin'])->name('login'); 
-
+//forget password
+// Route::get('/forgot-password', function () {
+//     return view('auth.forgot-password');
+// })->middleware('guest')->name('password.request');
 //
 // Route::post("login",[Login::class,'userLogin']);
 //show admin 
@@ -55,9 +58,9 @@ Route::get('student',[StudentController::class,'courseShow']);
 //Show displayadmin  from admin all//
 //Route::get('displayadmin',[AdminController::class,'ShowDisplayAdimn']);
 Route::post('displayadmin',[AdminController::class,'viewAll'])->name('AdminController');
-Route::post('deletedata/{id}',[AdminController::class,'destroy']) ->name('deletedata'); //for delete record
-Route::post('updatedata/{id}',[AdminController::class,'showData']) ->name('updatedata');//for showing the record if want to update
-Route::post('edit/{id}',[AdminController::class,'upDate'])->name('edit');;//for update record
+Route::get('deletedata/{id}',[AdminController::class,'destroy']) ->name('deletedata'); //for delete record
+Route::get('updatedata/{id}',[AdminController::class,'showData']) ->name('updatedata');//for showing the record if want to update
+Route::post('edit/{id}',[AdminController::class,'upDate'])->name('edit');//for update record
 
 
 //

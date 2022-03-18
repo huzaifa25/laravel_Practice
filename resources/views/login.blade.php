@@ -72,7 +72,7 @@
                 </select>  
             <button type="submit" name="form2" name="submit">Login</button>
             <a href="signup.php"><button type="button" >Sign up</button></a>
-           <span class="fpsw"> <a href="forget-password.php">Forgot Password</a><span>
+           <span class="fpsw"> <a href="" style="color:whitesmoke">Forgot Password</a><span>
           </div>
         </form>
       </div>

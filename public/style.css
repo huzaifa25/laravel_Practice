@@ -138,7 +138,7 @@ img.avatar {
  
 span.fpsw {
   float: right;
-  background-color: whitesmoke;
+ 
 }
 
 /* The Modal (background) */
@@ -493,14 +493,11 @@ li.dropdown {
 }
 /* action button class display admin page */
 .action{
-  background-color: CADETBLUE;
   color: whitesmoke;
-  padding: 14px 20px;
-  margin: 8px 0;
-  cursor: pointer;
-  width: 49%;
-  border: none;
-  
+  display: flex;
+  font-size: 20px;
+  justify-content: space-around;
+
 }
 .upbox{
   background: #201919e8;

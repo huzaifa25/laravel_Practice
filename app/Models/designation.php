@@ -9,11 +9,13 @@ use App\Models\post;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
+//use Illuminate\Contracts\Auth\CanResetPassword;
 
 class designation extends Model
 {   
     use SoftDeletes;
     use HasFactory;
+    //use CanResetPassword;
     protected $table = 'users';
     
   //  public $timestamps=false;
