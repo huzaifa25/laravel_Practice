@@ -6,6 +6,7 @@ use App\Http\Controllers\Login;
 use App\Http\Controllers\TeacherController;
 use App\Http\Controllers\LogoutController;
 use App\Http\Controllers\StudentController;
+use App\Http\Controllers\ResetPasswordController;
 use App\Http\Controllers\AdminController;
 
 //use App\Http\Controllers;
@@ -36,11 +37,14 @@ Route::get('signup', [UserController::class,'showPost']);
 
 Route::get('login', [Login::class,'show']);
 Route::post("login",[Login::class,'userLogin'])->name('login'); 
-//forget password
-// Route::get('/forgot-password', function () {
-//     return view('auth.forgot-password');
-// })->middleware('guest')->name('password.request');
-//
+//forget password//////////////////
+Route::get('/forgot-password', function () {
+    return view('auth.forgot-password');
+})->middleware('guest')->name('password-request');
+Route::get('/reset-password', function () {
+    return view('auth.reset-password');
+})->middleware('guest')->name('password.email');
+////////////////////////
 // Route::post("login",[Login::class,'userLogin']);
 //show admin 
 Route::get('admin',function(){

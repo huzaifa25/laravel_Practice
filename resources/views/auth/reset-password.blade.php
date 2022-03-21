@@ -1,48 +1,61 @@
-<x-guest-layout>
-    <x-auth-card>
-        <x-slot name="logo">
-            <a href="/">
-                <x-application-logo class="w-20 h-20 fill-current text-gray-500" />
-            </a>
-        </x-slot>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="author" content="Kodinger">
+	<meta name="viewport" content="width=device-width,initial-scale=1">
+	<title>Reset Password</title>
+	<link rel="stylesheet" href="{{ asset('bootstrap/css/bootstrap.css') }}">
+	<link rel="stylesheet" type="text/css" href="{{ asset('css/my-login.css') }}">
+</head>
+<body class="my-login-page">
+	<section class="h-100">
+		<div class="container h-100">
+			<div class="row justify-content-md-center align-items-center h-100">
+				<div class="card-wrapper">
+				
+					<div class="cardx fat">
+						<div class="card-body">
+							<h4 class="card-title">Reset Password</h4>
+							<form method="POST" class="my-login-validation" novalidate="" action="">
+                                @csrf
 
-        <!-- Validation Errors -->
-        <x-auth-validation-errors class="mb-4" :errors="$errors" />
+                                <input type="hidden" name="token" value="{{ $token ?? '' }}">
+								<div class="form-group">
+									<label for="email">Email</label>
+									<input id="email" type="email" class="form-control" name="email" placeholder="Email address" value="{{ $email ?? old('email') }}">
+                                    <span class="text-danger">@error('email'){{$message}} @enderror</span>
+								</div>
+								<div class="form-group">
+									<label for="password">New Password</label>
+									<input id="password" type="password" class="form-control" name="password" placeholder="Enter new password">
+                                    <span class="text-danger">@error('password'){{$message}}@enderror</span>
+								</div>
+								<div class="form-group">
+									<label for="password-confirm">Confirm Password</label>
+									<input id="password-confirm" type="password" class="form-control" name="password_confirmation" placeholder="Enter confirm password">
+                                    <span class="text-danger">@error('password_confirmation'){{$message}} @enderror</span>
+								</div>
 
-        <form method="POST" action="{{ route('password.update') }}">
-            @csrf
+								<div class="form-group m-0">
+									<button type="submit" class="btn btn-primary btn-block">
+										Reset Password
+									</button>
+								</div>
+							</form>
+						</div>
+					</div>
+					<div class="footer">
+						Copyright &copy; 2021 &mdash; Your Company
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
 
-            <!-- Password Reset Token -->
-            <input type="hidden" name="token" value="{{ $request->route('token') }}">
-
-            <!-- Email Address -->
-            <div>
-                <x-label for="email" :value="__('Email')" />
-
-                <x-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email', $request->email)" required autofocus />
-            </div>
-
-            <!-- Password -->
-            <div class="mt-4">
-                <x-label for="password" :value="__('Password')" />
-
-                <x-input id="password" class="block mt-1 w-full" type="password" name="password" required />
-            </div>
-
-            <!-- Confirm Password -->
-            <div class="mt-4">
-                <x-label for="password_confirmation" :value="__('Confirm Password')" />
-
-                <x-input id="password_confirmation" class="block mt-1 w-full"
-                                    type="password"
-                                    name="password_confirmation" required />
-            </div>
-
-            <div class="flex items-center justify-end mt-4">
-                <x-button>
-                    {{ __('Reset Password') }}
-                </x-button>
-            </div>
-        </form>
-    </x-auth-card>
-</x-guest-layout>
+	<script src="jquery-3.4.1.min.js"></script>
+	<script src="bootstrap/js/popper.js"></script>
+	<script src="bootstrap/js/bootstrap.js"></script>
+	<script src="js/my-login.js"></script>
+</body>
+</html>
